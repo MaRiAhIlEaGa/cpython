@@ -1,0 +1,35 @@
+from turtle import Turtle, colormode
+import random
+
+circle = Turtle()
+color_list = [(229, 228, 226), (225, 223, 224), (199, 175, 117), (124, 36, 24), (210, 221, 213), (168, 106, 57),
+(222, 224, 227), (186, 158, 53), (6, 57, 83), (109, 67, 85), (113, 161, 175), (22, 122, 174),
+(64, 153, 138), (39, 36, 36), (76, 40, 48), (9, 67, 47), (90, 141, 53), (181, 96, 79), (132, 40, 42),
+(210, 200, 151), (141, 171, 155), (179, 201, 186), (172, 153, 159), (212, 183, 177), (176, 198, 203)]
+colormode(255)
+
+list(color_list)
+
+for i in range(1, 6):
+    for j in range(1, 5):
+        new_color = random.choice(color_list)
+        circle.dot(20, new_color)
+        circle.color(new_color)
+        circle.forward(10)
+        circle.color("white")
+        circle.forward(30)
+    new_color = random.choice(color_list)
+    circle.dot(20, new_color)
+    circle.color(new_color)
+    if i % 2 == 1:
+        circle.left(90)
+        circle.forward(10)
+        circle.color("white")
+        circle.forward(20)
+        circle.left(90)
+    else:
+        circle.right(90)
+        circle.forward(10)
+        circle.color("white")
+        circle.forward(20)
+        circle.right(90)
